@@ -6,7 +6,9 @@
 .project
 Servers/
 ch2/.gitignore
+*/.gitignore
 ch2/WebContent/META-INF
+*/WebContent/META-INF
 
 ### Eclipse ###
 .metadata
