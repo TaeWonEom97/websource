@@ -8,4 +8,8 @@ create table member(
 
 insert into member values('hong123','hong123@','홍길동','남','hong123@gmail.com');
 
+
+
 select * from member;
+
+alter table member modify (gender nvarchar2(10));
