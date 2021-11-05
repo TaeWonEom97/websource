@@ -1,16 +1,16 @@
-package pattern.action;
+package member.action;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
-@Getter
+//목적 : 이동경로와 이동방식 저장
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class ActionForward {
-	//이동 경로와 이동방식 지정
 	private String path;
-	private boolean redirect; //true:sendRedirect , false:forward
+	private boolean redirect;
 }
