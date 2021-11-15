@@ -103,4 +103,24 @@ public class MemberDAO {
 		}
 		return insertFlag;
 	}
+	public boolean dup(String userid) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean dupFlag = true;
+		try {
+			String sql="select * from member where userid=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dupFlag=false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return dupFlag;
+	}
 }

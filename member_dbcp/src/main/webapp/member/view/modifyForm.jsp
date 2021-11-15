@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp" %>
 <%
-	MemberDTO loginDto = (MemberDTO)session.getAttribute("loginDto");
+	/* MemberDTO loginDto = (MemberDTO)session.getAttribute("loginDto"); */
 %>
 <form id="modifyform" action="/modify.do" method="post">
 	<div class="card"  style="width: 40rem;margin:40px auto;">	
@@ -38,7 +38,8 @@
 </form>
 <%--로그인 후 메뉴 스크립트--%>
 <script>
-      let name = '<%=loginDto.getName()%>';
+      <%-- let name = '<%=loginDto.getName()%>'; --%>
+      let name ='${loginDto.name}';
    </script>
 	<script src="../js/menu.js"></script>
 	
