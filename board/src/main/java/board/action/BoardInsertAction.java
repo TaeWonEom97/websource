@@ -31,8 +31,8 @@ public class BoardInsertAction implements BoardAction {
 
 		
 		
-		  BoardInsertService service = new BoardInsertService(); boolean insertFlag =
-		  service.boardInsert(boardDto); 
+		  BoardInsertService service = new BoardInsertService(); 
+		  boolean insertFlag =service.boardInsert(boardDto); 
 		  if(!insertFlag) {
 		  path="/view/qna_board_write.jsp"; }
 		 
