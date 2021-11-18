@@ -2,18 +2,21 @@ package board.service;
 
 import java.sql.Connection;
 import java.util.List;
-import static board.persistence.JdbcUtil.*;
+
 import board.domain.BoardDTO;
-import board.domain.PageDTO;
+import board.domain.SearchDTO;
 import board.persistence.BoardDAO;
 
-public class BoardListService {
-	public List<BoardDTO>all(PageDTO pageDto){
+import static board.persistence.JdbcUtil.*;
+public class SearchService {
+	public List<BoardDTO> search(SearchDTO searchDto){
 		Connection con = getConnection();
 		BoardDAO dao = new BoardDAO(con);
 		
-		List<BoardDTO> boardList = dao.getList(pageDto);
+		List<BoardDTO> list = dao.searchList(searchDto);
 		close(con);
-		return boardList;
+		return list;
+		
+
 	}
 }

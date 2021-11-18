@@ -32,7 +32,10 @@ public class BoardActionfactory {
 			action = new BoardReadAction("/view/qna_board_reply.jsp");
 		}else if(cmd.equals("/reply.do")) {
 			action = new BoardReplyAction("/list.do");
-		}
+		} /*
+			 * else if(cmd.equals("/search.do")) { action = new
+			 * BoardListAction("/view/qna_board_list.jsp"); }
+			 */
 		return action;
 	}
 
