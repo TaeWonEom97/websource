@@ -30,8 +30,8 @@ public class BoardListAction implements BoardAction {
 		BoardTotalRowsService rowsService = new BoardTotalRowsService();
 		int total = rowsService.totalRows(searchDto);
 		
-		PageDTO pageDto = new PageDTO(total,page,amount,searchDto);
-		request.setAttribute("searchDto", searchDto);
+
+			PageDTO pageDto = new PageDTO(total,page,amount,searchDto);	request.setAttribute("searchDto", searchDto);
 		request.setAttribute("pageDto", pageDto);
 		// ----------------- 페이지 나누기
 			

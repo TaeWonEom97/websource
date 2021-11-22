@@ -2,11 +2,13 @@ package board.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 //페이지 나누기와 관련된 정보
 public class PageDTO {
 	private int startPage; //시작페이지

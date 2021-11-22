@@ -3,6 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
@@ -67,7 +70,11 @@
 				</div>
 				<div style="height:20px"></div>
 			</div>
-			<input type="hidden" name="bno" value="${dto.bno}" />
+			<input type="hidden" name="page" value="${pageDto.page}" />
+			<input type="hidden" name="amount" value="${pageDto.amount}" />
+			<input type="hidden" name="criteria" value="${pageDto.searchDto.criteria}" />
+			<input type="hidden" name="keyword" value="${pageDto.searchDto.keyword}" />
+			<input type="hidden" name="bno" value="${dto.bno}" />		
 		</form>
 	</div>
 </section>

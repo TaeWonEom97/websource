@@ -2,13 +2,34 @@
  * qna_board_list.jsp
  */
 $(function(){
+	//새글 작성을 클릭하면 actionForm으로 보내기
+	//onclick="location.href='/view/qna_board_write.jsp'"
+	$(".btn-success").click(function(){
+		$("#actionForm").find("[name='bno']").remove();
+		$("#actionForm").attr("action","/view/qna_board_write.jsp");
+		$("#actionForm").attr("method","get");
+		$("#actionForm").submit();
+	})
+	
+	//제목을 클릭하면 actionForm 보내기
+		$(".count").click(function(e){
+		e.preventDefault();
+		
+		let href=$(this).attr('href');
+		
+		$("#actionForm").find("[name='bno']").val(href);
+		$("#actionForm").attr("action","/countUpdate.do");
+		$("#actionForm").submit();
+	})
+	
 	//페이지 번호를 클릭하면 actionForm 보내기
 	$(".move").click(function(e){
 		e.preventDefault();
 		
 		let href=$(this).attr('href');
-		
+		$("#actionForm").find("[name='bno']").remove();
 		$("#actionForm").find("[name='page']").val(href);
+		$("#actionForm").attr("action","/list.do");
 		$("#actionForm").submit();
 	})
 	
@@ -38,7 +59,7 @@ $(function(){
 			keyword.focus();
 			return;
 		}
-		
+		$("#search").find("[name='page']").val("1");
 		$("#search").submit();
 	})
 
